@@ -1,0 +1,31 @@
+<ion-view view-title="Detailansicht">
+  <ion-content>
+
+
+    <div class="list list-inset">
+      <div class="item item-divider">
+        <b>{{pruefung.name}}</b>
+      </div>
+      <div class="item">
+        <b>ID:</b> {{id}}
+      </div>
+      <div class="item">
+        <b>Status:</b> {{pruefung.status}}
+      </div>
+      <div class="item">
+        <b>Credits:</b> {{pruefung.credits}}
+      </div>
+      <div class="item">
+        <b>Note:</b>{{pruefung.endnote}}
+      </div>
+      <div class="item item-divider">
+        <b>Punkte</b>
+      </div>
+      <div class ="item row responsive-sm" ng-repeat="reihe in pruefung.punkte track by $index">
+        <div class="col" ng-repeat="text in reihe track by $index">{{text}}</div>
+      </div>
+    </div>
+    </div>
+
+  </ion-content>
+</ion-view>

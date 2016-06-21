@@ -1,0 +1,18 @@
+<ion-view view-title="Noten" ng-controller="myController">
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-android-refresh" ng-click="doLogin()" ng-hide="loading">
+    </button>
+  </ion-nav-buttons>
+  <ion-content >
+    <div class="list">
+      <div class="semester" ng-repeat="semester in storage">
+        <div class="item item-divider">
+          <h3>{{semester.semester}}</h3>
+        </div>
+        <a class="item" ng-repeat="pruefung in semester.pruefungen"  ui-sref="tab.detail({ pruefID: pruefung.id})">
+          {{pruefung.name}}<span class="ion-chevron-right chevronList"></span>
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
